@@ -1,6 +1,6 @@
 def main():
     password = get_password()
-    print('*' * len(password))
+    print(print_password(password))
 
 
 def get_password():
@@ -9,6 +9,10 @@ def get_password():
         print("Password not long enough")
         password_choice = input("Pick another Password: ")
     return password_choice
+
+
+def print_password(password):
+    return '*' * len(password)
 
 
 main()
