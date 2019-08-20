@@ -6,11 +6,11 @@ Broken program to determine score status
 
 def main():
     score = float(input("Enter score: "))
-    result = university_grade(score)
+    result = grade(score)
     print(result)
 
 
-def university_grade(score):
+def grade(score):
     if score < 0 or score > 100:
         return "Invalid score"
     elif score >= 90:
