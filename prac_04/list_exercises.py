@@ -2,7 +2,7 @@
 
 def main():
     numbers = []
-    for i in range[1:5]:
+    for i in range(1,6):
         number = int(input("Number: "))
         numbers.append(number)
     print("The first number is {}".format(numbers[0]))
