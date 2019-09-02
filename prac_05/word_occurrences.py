@@ -2,10 +2,7 @@ number_string_occurrence = {}
 text = input("Text: ")
 strings = text.split()
 for string in strings:
-    try:
-        number_string_occurrence[string] += 1
-    except KeyError:
-        number_string_occurrence[string] = 1
+    number_string_occurrence[string] = number_string_occurrence.get(string,0)+1
 
 
 
