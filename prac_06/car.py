@@ -29,6 +29,7 @@ class Car:
         else:
             self.fuel -= distance
         self.odometer += distance
+        print(self.odometer)
         return distance
 
     # Modifications

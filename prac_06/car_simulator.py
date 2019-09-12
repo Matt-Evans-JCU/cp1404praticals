@@ -20,14 +20,16 @@ def main():
     choice = input('Enter your choice: ').upper()
     while choice != 'Q':
         if choice == 'D':
-            distance_driven = int(input('How many km do you wish to drive? '))
-            if distance_driven < 0:
+            distance = int(input('How many km do you wish to drive? '))
+            if distance < 0:
                 print('Distance must be >= 0')
-                distance_driven = int(input('How many km do you wish to drive? '))
-            if distance_driven > car.fuel:
-                print('The car drove {} and ran out of fuel'.format(car.fuel))
+                distance = int(input('How many km do you wish to drive? '))
+            distance_driven = car.drive(distance)
+            if distance > car.fuel:
+                print('The car drove {}km and ran out of fuel'.format(distance_driven))
             else:
-                print('The car drove {}'.format(distance_driven))
+                print('The car drove {}km'.format(distance_driven))
+
         elif choice == 'R':
             refuel = int(input('How many units of fuel do you want to add to the car? '))
             if refuel < 0:
