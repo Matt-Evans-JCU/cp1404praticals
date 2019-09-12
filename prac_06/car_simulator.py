@@ -25,8 +25,10 @@ def main():
             pass
         else:
             print('Invalid choice')
+            print(car)
             print(MENU)
             choice = input('Enter your choice: ').upper()
     print("Good bye {}'s driver".format(name))
 
 
+main()
