@@ -22,7 +22,12 @@ def main():
         if choice == 'D':
             pass
         elif choice == 'R':
-            pass
+            refuel = int(input('How many units of fuel do you want to add to the car? '))
+            if refuel < 0:
+                print('Fuel amount must be >= 0')
+                refuel = int(input('How many units of fuel do you want to add to the car? '))
+            car.add_fuel(refuel)
+            print('Added {} units of fuel'.format(refuel))
         else:
             print('Invalid choice')
             print(car)
