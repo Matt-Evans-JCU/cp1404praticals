@@ -37,9 +37,9 @@ def main():
             print('Added {} units of fuel'.format(refuel))
         else:
             print('Invalid choice')
-            print(car)
-            print(MENU)
-            choice = input('Enter your choice: ').upper()
+        print(car)
+        print(MENU)
+        choice = input('Enter your choice: ').upper()
     print("Good bye {}'s driver".format(name))
 
 
