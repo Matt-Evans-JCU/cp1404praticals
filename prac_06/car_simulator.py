@@ -21,6 +21,9 @@ def main():
     while choice != 'Q':
         if choice == 'D':
             distance_driven = int(input('How many km do you wish to drive? '))
+            if distance_driven < 0:
+                print('Distance must be >= 0')
+                distance_driven = int(input('How many km do you wish to drive? '))
             if distance_driven > car.fuel:
                 print('The car drove {} and ran out of fuel'.format(car.fuel))
             else:
