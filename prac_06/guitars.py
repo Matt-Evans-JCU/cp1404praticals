@@ -22,4 +22,5 @@ def main():
             "Guitar {}: {guitar.name:>20} ({guitar.year}), worth ${guitar.cost:10,.2f} {}".format(i + 1, vintage_string,
                                                                                                   guitar=guitar))
 
+
 main()
