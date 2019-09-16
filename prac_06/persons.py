@@ -24,7 +24,7 @@ def main():
     while person_detail != '':
         persons_detail.append(person_detail)
         person_detail = input("Who's details to you want ")
-    for person in persons:
+    for person in persons:  # TODO: Can use an and to check mulitple fields or an 'or' if needed
         if person.first_name in persons_detail:
             print(person)
 
