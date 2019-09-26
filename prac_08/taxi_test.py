@@ -2,7 +2,7 @@ from prac_08.taxi import Taxi
 
 
 def main():
-        taxi = Taxi("Prius 1",100,1.23)
+        taxi = Taxi("Prius 1",100)
 
         taxi.drive(40)
 
