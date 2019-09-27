@@ -17,13 +17,17 @@ def main():
             print('Bill to date: ${:.2f}'.format(bill))
         if choice == 'D':
             drive_distance = int(input('Drive how far? '))
-            cost_of_trip = taxis[current_taxi].drive(drive_distance)
-            print('Your {} trip cost you ${}'.format(taxis[current_taxi].name,cost_of_trip))
+            taxis[current_taxi].drive(drive_distance)  # This updates self.current_fare_distance for driven distance
+            cost_of_trip = taxis[current_taxi].get_fare()
+            print('Your {} trip cost you ${:.2f}'.format(taxis[current_taxi].name,cost_of_trip))
             bill += cost_of_trip
             print('Bill to date: ${:.2f}'.format(bill))
         menu = """q)uit, c)hoose taxi, d)rive"""
         choice = input('>>> ').upper()
-
+    print('Total trip cost: ${:.2f}'.format(bill))
+    print('Taxis are now:')
+    for i, taxi in enumerate(taxis):  # The price_per_km in example 1.20 not 1.23
+        print('{} - {}'.format(i, taxi))
 
 
 main()
