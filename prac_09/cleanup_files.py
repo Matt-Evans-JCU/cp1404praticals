@@ -31,27 +31,43 @@ def main():
         new_name = get_fixed_filename(filename)
         print("Renaming {} to {}".format(filename, new_name))
 
-def get_fixed_filename(filename):
-    """Return a 'fixed' version of filename."""
-    new_name = filename.replace(" ", "_").replace(".TXT", ".txt")
-    return new_name
-
 
 def demo_walk():
     """Process all subdirectories using os.walk()."""
-    os.chdir('Lyrics')
-    for directory_name, subdirectories, filenames in os.walk('.'):
-        print("Directory:", directory_name)
-        print("\tcontains subdirectories:", subdirectories)
-        print("\tand files:", filenames)
-        print("(Current working directory is: {})".format(os.getcwd()))
+    # os.chdir('Lyrics')
+    # for directory_name, subdirectories, filenames in os.walk('.'):
+    #     print("Directory:", directory_name)
+    #     print("\tcontains subdirectories:", subdirectories)
+    #     print("\tand files:", filenames)
+    #     print("(Current working directory is: {})".format(os.getcwd()))
+    #     for filename in filenames:
+    #         full_name = os.path.join(directory_name, filename)
+    #         new_name = os.path.join(directory_name, get_fixed_filename(filename))
+    #         os.rename(full_name, new_name)
+    filename = 'ItIsWell (oh my soul).txt'
+    get_fixed_filename(filename)
 
 
-        for filename in filenames:
-            full_name = os.path.join(directory_name, filename)
-            new_name = os.path.join(directory_name, get_fixed_filename(filename))
-            os.rename(full_name, new_name)
+def get_fixed_filename(filename):
+    """Return a 'fixed' version of filename."""
 
+    new_filename = ''
+    number_of_splits = 0
+    for i, element in enumerate(filename):
+        if i == (len(filename) - 1-number_of_splits):
+            pass
+        elif element == ' ' and filename[i+1+number_of_splits].islower():
+            filename = filename[:i+1+number_of_splits] + filename[i+1+number_of_splits].upper() + filename[i+2+number_of_splits:]
+        elif element == "(" and filename[i+1+number_of_splits].islower():
+            filename = filename[:i+1+number_of_splits] + filename[i+1+number_of_splits].upper() + filename[i+2+number_of_splits:]
+        elif element.islower() and filename[i + 1+number_of_splits].isupper():
+            filename = filename[:i + 1+number_of_splits] + ' ' + filename[i+1+number_of_splits:]
+            number_of_splits +=1
 
-#main()
+    if new_filename == '':
+        new_filename = filename
+    new_name = new_filename.replace(" ", "_").replace(".TXT", ".txt")
+    print(new_name)
+
+# main()
 demo_walk()
