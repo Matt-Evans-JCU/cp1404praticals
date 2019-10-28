@@ -1,5 +1,6 @@
 import wikipedia
 
-choice = 'Pick a Search Phrase or Page Title: '
+choice = input('Pick a Search Phrase or Page Title: ')
 while choice != '':
-    pass
+    print(wikipedia.summary(choice))
+    choice = input('Pick a Search Phrase or Page Title: ')
