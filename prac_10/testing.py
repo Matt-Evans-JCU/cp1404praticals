@@ -3,21 +3,26 @@ CP1404/CP5632 Practical
 Testing demo using assert and doctest
 """
 
-import doctest
+#import doctest
 from prac_06.car import Car
 
 
 def repeat_string(s, n):
     """Repeat string s, n times, with spaces in between."""
-    string = []
+    # string = []
+    #
+    # if n == 1:
+    #     return s
+    # else:
+    #     for i in range(n):
+    #         string.append(s)
+    # return ' '.join(string)
 
-    if n == 1:
-        return s
-    else:
-        for i in range(n):
-            string.append(s)
+    # Other Method:
 
-    return ' '.join(string)
+    return ' '.join([s]*n)
+
+
 
 
 def is_long_word(word, length=5):
@@ -34,12 +39,16 @@ def is_long_word(word, length=5):
 
 
 def sort_phrase(string):
-    for i, element in enumerate(string):
-        if i == 0:
-            correct_phrase = element.upper() + string[1:len(string)]
-        if len(string) - i == 1:
-            if element != '.':
-                correct_phrase= correct_phrase + '.'
+    # for i, element in enumerate(string):
+    #     if i == 0:
+    #         correct_phrase = element.upper() + string[1:len(string)]
+    #     if len(string) - i == 1:
+    #         if element != '.':
+    #             correct_phrase = correct_phrase + '.'
+    # Other Method:
+    if string[-1] != '.':
+        string = string + '.'
+    correct_phrase = string.capitalize()
     return correct_phrase
 
 
@@ -71,6 +80,7 @@ def run_tests():
     assert sort_phrase('It is an ex parrot.') == 'It is an ex parrot.'
 
     assert sort_phrase('hello world...') == 'Hello world...'
+
 
 run_tests()
 

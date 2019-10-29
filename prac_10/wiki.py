@@ -10,5 +10,6 @@ while choice != '':
         choice = input('Pick a Search Phrase or Page Title: ')
     except wikipedia.exceptions.DisambiguationError as e:
         print("These are your options")
-        print(e.options)
+        for option in e.options:
+            print(option)
         choice = input('Pick a Search Phrase or Page Title: ')
